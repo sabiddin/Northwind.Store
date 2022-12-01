@@ -10,7 +10,7 @@
     public class DapperService
     {
         private static readonly IDbConnection dbConnection = new SqlConnection(
-            @"data source=<YOUR-DATABASE-SERVER>;initial catalog=Northwind;persist security info=True;Integrated Security=SSPI;");
+            @"data source=CS310-L\SYED;initial catalog=Northwind;persist security info=True;Integrated Security=SSPI;");
 
         public static async Task<T> GetAsync<T>(string command, object parameters)
         {

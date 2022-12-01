@@ -38,9 +38,9 @@
             this.selectedUser ??= new User();
             this.selectedUser.UserId = Convert.ToInt32(this.txtUserId.Text);
             this.selectedUser.CustomerId = this.txtCustomerId.Text;
-            if (string.IsNullOrEmpty( this.selectedUser.CustomerId ))
+            if (string.IsNullOrEmpty( this.selectedUser.CustomerId ) && !string.IsNullOrEmpty(this.txtEmployeeId.Text))
             {
-                this.selectedUser.EmployeeId = Convert.ToInt32(this.txtUserId.Text); 
+                this.selectedUser.EmployeeId = Convert.ToInt32(this.txtEmployeeId.Text); 
             }
             this.selectedUser.LastName = this.txtLastName.Text;
             this.selectedUser.FirstName = this.txtFirstName.Text;
@@ -76,6 +76,10 @@
                 Admin = Convert.ToBoolean(selectedRow.Cells[7].Value),
                 Department = selectedRow.Cells[8].Value?.ToString(),
             };
+            if (selectedRow.Cells[2].Value == null)
+            {
+                this.selectedUser.EmployeeId = null;
+            }
 
             this.txtLastName.Text = this.selectedUser.LastName;
             this.txtFirstName.Text = this.selectedUser.FirstName;
@@ -100,6 +104,7 @@
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            this.selectedUser = null;
             this.txtUserId.Text = "0";
             this.txtCustomerId.Text = string.Empty;
             this.txtEmployeeId.Text = string.Empty;
