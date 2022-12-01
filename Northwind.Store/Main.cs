@@ -11,6 +11,7 @@ namespace Northwind.Store
     using Northwind.Store.Admin;
     using Northwind.Store.Customers;
     using Northwind.Store.Order;
+    using Northwind.Store.Product;
 
     public partial class Main : Form
     {
@@ -90,6 +91,13 @@ namespace Northwind.Store
             var orderDetailsScreen = new OrderDetailsScreen();
             orderDetailsScreen.MdiParent = this;
             orderDetailsScreen.Show();
+        }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var productScreen = new ProductScreen();
+            productScreen.MdiParent = this;
+            productScreen.Show();
         }
     }
 }
