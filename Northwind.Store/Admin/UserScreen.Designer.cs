@@ -32,6 +32,10 @@ namespace Northwind.Store.Admin
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.pnlForGrid = new System.Windows.Forms.Panel();
             this.pnlForEdit = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblCustomerId = new System.Windows.Forms.Label();
+            this.txtEmployeeId = new System.Windows.Forms.TextBox();
+            this.txtCustomerId = new System.Windows.Forms.TextBox();
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.chkAdmin = new System.Windows.Forms.CheckBox();
             this.txtDepartment = new System.Windows.Forms.TextBox();
@@ -49,8 +53,6 @@ namespace Northwind.Store.Admin
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblMessage = new System.Windows.Forms.Label();
-            this.txtCustomerId = new System.Windows.Forms.TextBox();
-            this.txtEmployeeId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.pnlForGrid.SuspendLayout();
             this.pnlForEdit.SuspendLayout();
@@ -82,6 +84,8 @@ namespace Northwind.Store.Admin
             // 
             // pnlForEdit
             // 
+            this.pnlForEdit.Controls.Add(this.label2);
+            this.pnlForEdit.Controls.Add(this.lblCustomerId);
             this.pnlForEdit.Controls.Add(this.txtEmployeeId);
             this.pnlForEdit.Controls.Add(this.txtCustomerId);
             this.pnlForEdit.Controls.Add(this.txtUserId);
@@ -98,8 +102,40 @@ namespace Northwind.Store.Admin
             this.pnlForEdit.Controls.Add(this.lblLastName);
             this.pnlForEdit.Location = new System.Drawing.Point(12, 324);
             this.pnlForEdit.Name = "pnlForEdit";
-            this.pnlForEdit.Size = new System.Drawing.Size(836, 151);
+            this.pnlForEdit.Size = new System.Drawing.Size(836, 170);
             this.pnlForEdit.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(311, 135);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 15);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Employee Id";
+            // 
+            // lblCustomerId
+            // 
+            this.lblCustomerId.AutoSize = true;
+            this.lblCustomerId.Location = new System.Drawing.Point(16, 138);
+            this.lblCustomerId.Name = "lblCustomerId";
+            this.lblCustomerId.Size = new System.Drawing.Size(72, 15);
+            this.lblCustomerId.TabIndex = 14;
+            this.lblCustomerId.Text = "Customer Id";
+            // 
+            // txtEmployeeId
+            // 
+            this.txtEmployeeId.Location = new System.Drawing.Point(393, 135);
+            this.txtEmployeeId.Name = "txtEmployeeId";
+            this.txtEmployeeId.Size = new System.Drawing.Size(202, 23);
+            this.txtEmployeeId.TabIndex = 13;
+            // 
+            // txtCustomerId
+            // 
+            this.txtCustomerId.Location = new System.Drawing.Point(94, 135);
+            this.txtCustomerId.Name = "txtCustomerId";
+            this.txtCustomerId.Size = new System.Drawing.Size(202, 23);
+            this.txtCustomerId.TabIndex = 12;
             // 
             // txtUserId
             // 
@@ -163,7 +199,7 @@ namespace Northwind.Store.Admin
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(25, 56);
+            this.lblUserName.Location = new System.Drawing.Point(48, 56);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(40, 15);
             this.lblUserName.TabIndex = 4;
@@ -251,22 +287,6 @@ namespace Northwind.Store.Admin
             this.lblMessage.Size = new System.Drawing.Size(0, 15);
             this.lblMessage.TabIndex = 26;
             // 
-            // txtCustomerId
-            // 
-            this.txtCustomerId.Location = new System.Drawing.Point(618, 56);
-            this.txtCustomerId.Name = "txtCustomerId";
-            this.txtCustomerId.Size = new System.Drawing.Size(202, 23);
-            this.txtCustomerId.TabIndex = 12;
-            this.txtCustomerId.Visible = false;
-            // 
-            // txtEmployeeId
-            // 
-            this.txtEmployeeId.Location = new System.Drawing.Point(618, 101);
-            this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.Size = new System.Drawing.Size(202, 23);
-            this.txtEmployeeId.TabIndex = 13;
-            this.txtEmployeeId.Visible = false;
-            // 
             // UserScreen
             // 
             this.AcceptButton = this.btnUpdate;
@@ -317,5 +337,8 @@ namespace Northwind.Store.Admin
         private System.Windows.Forms.TextBox txtUserId;
         private System.Windows.Forms.TextBox txtEmployeeId;
         private System.Windows.Forms.TextBox txtCustomerId;
+        private System.Windows.Forms.Label lblEmployeeId;
+        private System.Windows.Forms.Label lblCustomerId;
+        private System.Windows.Forms.Label label2;
     }
 }

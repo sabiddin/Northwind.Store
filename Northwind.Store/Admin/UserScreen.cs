@@ -37,8 +37,11 @@
         {
             this.selectedUser ??= new User();
             this.selectedUser.UserId = Convert.ToInt32(this.txtUserId.Text);
-            this.selectedUser.CustomerId = this.txtUserId.Text;
-            this.selectedUser.EmployeeId = Convert.ToInt32(this.txtUserId.Text);
+            this.selectedUser.CustomerId = this.txtCustomerId.Text;
+            if (string.IsNullOrEmpty( this.selectedUser.CustomerId ))
+            {
+                this.selectedUser.EmployeeId = Convert.ToInt32(this.txtUserId.Text); 
+            }
             this.selectedUser.LastName = this.txtLastName.Text;
             this.selectedUser.FirstName = this.txtFirstName.Text;
             this.selectedUser.LoginId = this.txtUserName.Text;
@@ -64,7 +67,7 @@
             this.selectedUser = new User
             {
                 UserId = Convert.ToInt32(selectedRow.Cells[0].Value),
-                CustomerId = selectedRow.Cells[1]?.Value.ToString(),
+                CustomerId = selectedRow.Cells[1].Value?.ToString(),
                 EmployeeId = Convert.ToInt32(selectedRow.Cells[2].Value),
                 LastName = selectedRow.Cells[3].Value?.ToString(),
                 FirstName = selectedRow.Cells[4].Value?.ToString(),
@@ -99,7 +102,7 @@
         {
             this.txtUserId.Text = "0";
             this.txtCustomerId.Text = string.Empty;
-            this.txtEmployeeId.Text = "0";
+            this.txtEmployeeId.Text = string.Empty;
             this.txtLastName.Text = string.Empty;
             this.txtFirstName.Text = string.Empty;
             this.txtUserName.Text = string.Empty;
@@ -122,7 +125,7 @@
                                ,[LoginId]
                                ,[Password]
                                ,[Admin]
-                               ,[Department],
+                               ,[Department]
                                ,[CustomerId]
                                ,[EmployeeId])
                          VALUES
@@ -134,10 +137,18 @@
                                ,@Department
                                ,@CustomerId
                                ,@EmployeeId)";
-            var saved = await DapperService.EditData(sql, this.selectedUser);
-            if (saved > 1)
+            try
             {
-                this.lblMessage.Text = "User saved successfully";
+                var saved = await DapperService.EditData(sql, this.selectedUser);
+                if (saved > 1)
+                {
+                    this.lblMessage.Text = "User saved successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
 
             this.BindGrid();
@@ -145,24 +156,32 @@
 
         private async Task UpdateUser()
         {
-            this.FillUser();
+            this.FillUser();    
             var sql = @"UPDATE [dbo].[Users]
                         SET    [LastName] = @LastName
                               ,[FirstName] = @FirstName
                               ,[LoginId] = @LoginId
                               ,[Password] = @Password
                               ,[Admin] = @Admin
-                              ,[Department] = @Department,
-                              ,[CustomerId] = @CustomerId,
+                              ,[Department] = @Department
+                              ,[CustomerId] = @CustomerId
                               ,[EmployeeId] = @EmployeeId
                         WHERE [UserId] = @UserId";
-            var saved = await DapperService.EditData(sql, this.selectedUser);
-            if (saved > 1)
+            try
             {
-                this.lblMessage.Text = "User saved successfully";
-            }
+                var saved = await DapperService.EditData(sql, this.selectedUser);
+                if (saved > 0)
+                {
+                    this.lblMessage.Text = "User saved successfully";
+                }
 
-            this.BindGrid();
+                this.BindGrid();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

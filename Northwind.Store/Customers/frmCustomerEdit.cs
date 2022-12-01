@@ -98,10 +98,18 @@
            ,@Country
            ,@Phone
            ,@Fax)";
-            var saved = await DapperService.EditData(sql, this.customer);
-            if (saved > 1)
+            try
             {
-                this.lblMessage.Text = "Customer saved successfully";
+                var saved = await DapperService.EditData(sql, this.customer);
+                if (saved > 0)
+                {
+                    this.lblMessage.Text = "Customer saved successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
 
@@ -121,10 +129,18 @@
                           ,[Phone] =  @Phone
                           ,[Fax] =  @Fax
                      WHERE [CustomerID] =   @CustomerID";
-            var saved = await DapperService.EditData(sql, this.customer);
-            if (saved > 1)
+            try
             {
-                this.lblMessage.Text = "Customer saved successfully";
+                var saved = await DapperService.EditData(sql, this.customer);
+                if (saved > 0)
+                {
+                    this.lblMessage.Text = "Customer saved successfully";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
 
