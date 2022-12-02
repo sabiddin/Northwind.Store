@@ -10,6 +10,7 @@ namespace Northwind.Store
 {
     using Northwind.Store.Admin;
     using Northwind.Store.Customers;
+    using Northwind.Store.Employee;
     using Northwind.Store.Order;
     using Northwind.Store.Product;
 
@@ -98,6 +99,13 @@ namespace Northwind.Store
             var productScreen = new ProductScreen();
             productScreen.MdiParent = this;
             productScreen.Show();
+        }
+
+        private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var employeeScreen = new EmployeeScreen();
+            employeeScreen.MdiParent = this;
+            employeeScreen.Show();
         }
     }
 }

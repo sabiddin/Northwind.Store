@@ -50,6 +50,7 @@
             }
 
             this.fileMenuItem.Visible = true;
+            this.fileMenuItem.DropDownItems["employeesToolStripMenuItem"].Visible = Global.LoggedInUser.Admin is true;
             this.adminMenuItem.Visible = Global.LoggedInUser.Admin is true;
             var orderDetailsScreen = new OrderDetailsScreen();
             this.Hide();
