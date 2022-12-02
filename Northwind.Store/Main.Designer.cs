@@ -35,12 +35,13 @@ namespace Northwind.Store
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,8 @@ namespace Northwind.Store
             this.customersToolStripMenuItem,
             this.orderDetailsToolStripMenuItem,
             this.productsToolStripMenuItem,
-            this.employeesToolStripMenuItem});
+            this.employeesToolStripMenuItem,
+            this.suppliersToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(37, 20);
@@ -89,6 +91,13 @@ namespace Northwind.Store
             this.productsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productsToolStripMenuItem.Text = "Products";
             this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
+            // 
+            // employeesToolStripMenuItem
+            // 
+            this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
+            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.employeesToolStripMenuItem.Text = "Employees";
+            this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -122,12 +131,12 @@ namespace Northwind.Store
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // employeesToolStripMenuItem
+            // suppliersToolStripMenuItem
             // 
-            this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.employeesToolStripMenuItem.Text = "Employees";
-            this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
+            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
+            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.suppliersToolStripMenuItem.Text = "Suppliers";
+            this.suppliersToolStripMenuItem.Click += new System.EventHandler(this.suppliersToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -163,6 +172,7 @@ namespace Northwind.Store
         private System.Windows.Forms.ToolStripMenuItem orderDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
     }
 }
 

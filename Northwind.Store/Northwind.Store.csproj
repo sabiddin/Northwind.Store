@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Supplier\SupplierScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Employee\EmployeeScreen.cs">
       <SubType>Form</SubType>
     </Compile>

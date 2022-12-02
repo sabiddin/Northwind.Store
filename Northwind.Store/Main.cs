@@ -1,64 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
-namespace Northwind.Store
+﻿namespace Northwind.Store
 {
+    using System;
+    using System.Windows.Forms;
     using Northwind.Store.Admin;
     using Northwind.Store.Customers;
     using Northwind.Store.Employee;
     using Northwind.Store.Order;
     using Northwind.Store.Product;
+    using Northwind.Store.Supplier;
 
     public partial class Main : Form
     {
-        private int childFormNumber = 0;
+        private int childFormNumber;
 
         public Main()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
+            var childForm = new Form();
             childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
+            childForm.Text = "Window " + this.childFormNumber++;
             childForm.Show();
         }
 
-       private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LayoutMdi(MdiLayout.Cascade);
+            this.LayoutMdi(MdiLayout.Cascade);
         }
 
         private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LayoutMdi(MdiLayout.TileVertical);
+            this.LayoutMdi(MdiLayout.TileVertical);
         }
 
         private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LayoutMdi(MdiLayout.TileHorizontal);
+            this.LayoutMdi(MdiLayout.TileHorizontal);
         }
 
         private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LayoutMdi(MdiLayout.ArrangeIcons);
+            this.LayoutMdi(MdiLayout.ArrangeIcons);
         }
 
         private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form childForm in MdiChildren)
+            foreach (var childForm in MdiChildren)
             {
                 childForm.Close();
             }
@@ -106,6 +101,13 @@ namespace Northwind.Store
             var employeeScreen = new EmployeeScreen();
             employeeScreen.MdiParent = this;
             employeeScreen.Show();
+        }
+
+        private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var screen = new SupplierScreen();
+            screen.MdiParent = this;
+            screen.Show();
         }
     }
 }
