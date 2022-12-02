@@ -65,9 +65,9 @@ namespace Northwind.Store
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var customerForm = new frmCustomer();
-            customerForm.MdiParent = this;
-            customerForm.Show();
+            var customerScreen = new CustomerScreen();
+            customerScreen.MdiParent = this;
+            customerScreen.Show();
         }
 
         private void Main_Load(object sender, EventArgs e)
