@@ -67,7 +67,6 @@ namespace Northwind.Store.Employee
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.pnlForm.SuspendLayout();
-            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlGrid
@@ -97,8 +96,12 @@ namespace Northwind.Store.Employee
             // 
             // pnlForm
             // 
+            this.pnlForm.Controls.Add(this.btnCancel);
             this.pnlForm.Controls.Add(this.txtHireDate);
+            this.pnlForm.Controls.Add(this.btnClear);
             this.pnlForm.Controls.Add(this.lblHireDate);
+            this.pnlForm.Controls.Add(this.btnInsertNew);
+            this.pnlForm.Controls.Add(this.btnUpdate);
             this.pnlForm.Controls.Add(this.txtBirthDate);
             this.pnlForm.Controls.Add(this.lblBirthDate);
             this.pnlForm.Controls.Add(this.txtTitleOfCourtesy);
@@ -351,10 +354,6 @@ namespace Northwind.Store.Employee
             // 
             // pnlButtons
             // 
-            this.pnlButtons.Controls.Add(this.btnCancel);
-            this.pnlButtons.Controls.Add(this.btnClear);
-            this.pnlButtons.Controls.Add(this.btnInsertNew);
-            this.pnlButtons.Controls.Add(this.btnUpdate);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlButtons.Location = new System.Drawing.Point(0, 611);
             this.pnlButtons.Name = "pnlButtons";
@@ -363,7 +362,7 @@ namespace Northwind.Store.Employee
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(299, 20);
+            this.btnCancel.Location = new System.Drawing.Point(279, 319);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 9;
@@ -373,7 +372,7 @@ namespace Northwind.Store.Employee
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(380, 20);
+            this.btnClear.Location = new System.Drawing.Point(360, 319);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 8;
@@ -383,7 +382,7 @@ namespace Northwind.Store.Employee
             // 
             // btnInsertNew
             // 
-            this.btnInsertNew.Location = new System.Drawing.Point(461, 20);
+            this.btnInsertNew.Location = new System.Drawing.Point(441, 319);
             this.btnInsertNew.Name = "btnInsertNew";
             this.btnInsertNew.Size = new System.Drawing.Size(75, 23);
             this.btnInsertNew.TabIndex = 7;
@@ -393,7 +392,7 @@ namespace Northwind.Store.Employee
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(542, 20);
+            this.btnUpdate.Location = new System.Drawing.Point(522, 319);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 6;
@@ -415,7 +414,6 @@ namespace Northwind.Store.Employee
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.pnlForm.ResumeLayout(false);
             this.pnlForm.PerformLayout();
-            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
