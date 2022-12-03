@@ -355,14 +355,15 @@ namespace Northwind.Store.Employee
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnInsertNew);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 683);
+            this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlButtons.Location = new System.Drawing.Point(0, 611);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(866, 60);
+            this.pnlButtons.Size = new System.Drawing.Size(973, 60);
             this.pnlButtons.TabIndex = 44;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(283, 19);
+            this.btnCancel.Location = new System.Drawing.Point(299, 20);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 9;
@@ -372,7 +373,7 @@ namespace Northwind.Store.Employee
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(358, 19);
+            this.btnClear.Location = new System.Drawing.Point(380, 20);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 8;
@@ -382,7 +383,7 @@ namespace Northwind.Store.Employee
             // 
             // btnInsertNew
             // 
-            this.btnInsertNew.Location = new System.Drawing.Point(433, 19);
+            this.btnInsertNew.Location = new System.Drawing.Point(461, 20);
             this.btnInsertNew.Name = "btnInsertNew";
             this.btnInsertNew.Size = new System.Drawing.Size(75, 23);
             this.btnInsertNew.TabIndex = 7;
@@ -392,7 +393,7 @@ namespace Northwind.Store.Employee
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(508, 19);
+            this.btnUpdate.Location = new System.Drawing.Point(542, 20);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 6;
@@ -404,7 +405,7 @@ namespace Northwind.Store.Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 766);
+            this.ClientSize = new System.Drawing.Size(973, 676);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlGrid);
