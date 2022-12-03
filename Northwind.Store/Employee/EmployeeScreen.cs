@@ -13,12 +13,12 @@
 
         public EmployeeScreen()
         {
-            this.InitializeComponent();
-            BindGrid();
             this.btnInsertNew.Visible = Global.LoggedInUser.Admin is true;
             this.btnUpdate.Visible = Global.LoggedInUser.Admin is true;
             this.btnClear.Visible = Global.LoggedInUser.Admin is true;
             this.btnCancel.Visible = Global.LoggedInUser.Admin is true;
+            this.InitializeComponent();
+            BindGrid();
         }
 
         private async Task AddEmployee()
